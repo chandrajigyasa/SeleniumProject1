@@ -13,13 +13,13 @@ public class LoginPOM {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(id="login")
+	@FindBy(xpath="//input[@id='cyclosUsername']")
 	private WebElement userName; 
 	
 	@FindBy(id="password")
 	private WebElement password;
 	
-	@FindBy(id="formLogin_submitAuth")
+	@FindBy(xpath="//div[@id='virtualKeyboard']//div//input[@class='button']")
 	private WebElement loginBtn; 
 	
 	public void sendUserName(String userName) {
@@ -32,7 +32,8 @@ public class LoginPOM {
 		this.password.sendKeys(password); 
 	}
 	
-	public void clickLoginBtn() {
+	public void clickLoginBtn()
+	{
 		this.loginBtn.click(); 
 	}
 }
